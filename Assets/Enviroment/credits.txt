@@ -54,3 +54,6 @@ https://www.fab.com/listings/469cc8f9-9e97-4de3-adcf-8fea6139b36d
 
 toy
 https://www.fab.com/listings/fa6f1c5a-86ba-42c8-a817-804a11e0ff8a
+
+bed
+https://www.fab.com/listings/5fc3a46c-f3f2-46cd-9bed-935ec9df5ea9
