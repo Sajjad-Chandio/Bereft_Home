@@ -19,7 +19,7 @@ public class Interactor : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo, range))
         {
-            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractables interactable))
+            if (hitInfo.collider.gameObject.TryGetComponent(out DialoguePlayer interactable))
             {
                 interactMessage.text = interactable.InteractionMessage();
                 interactMessage.enabled = true;

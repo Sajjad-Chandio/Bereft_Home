@@ -34,7 +34,7 @@ public class RealisticFirstPersonController : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip startClip;
-    public audiocontroller audiocontroller;
+    public ChoiceSystem audiocontroller;
     private AudioSource audioSource;
 
     void Start()
@@ -47,7 +47,7 @@ public class RealisticFirstPersonController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         
         // Audio stuff
-        audiocontroller = GameObject.Find("AudioControl").GetComponent<audiocontroller>();
+        // audiocontroller = GameObject.Find("AudioControl").GetComponent<audiocontroller>();
 
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)

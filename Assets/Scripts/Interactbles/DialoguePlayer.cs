@@ -1,18 +1,19 @@
 using UnityEngine;
 
-public class DialoguePlayer : MonoBehaviour, IInteractables
+public class DialoguePlayer : MonoBehaviour
 {
     public AudioClip dialogueClip;
-    private audiocontroller audiocontroller;
+    public GameObject gameUI;
     private AudioSource audioSource;
 
     public int Index;
-    private ChoiceSystem choice;
+    public ChoiceSystem audiocontroller;
+    public RealisticFirstPersonController playerController;
 
     void Start()
     {
-        audiocontroller = GameObject.Find("AudioControl").GetComponent<audiocontroller>();
-        choice = GameObject.Find("ChoiceSystem").GetComponent<ChoiceSystem>();
+        // audiocontroller = ChoiceSystem.GetComponent<ChoiceSystem>();
+        gameUI.SetActive(true);
 
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
@@ -39,7 +40,12 @@ public class DialoguePlayer : MonoBehaviour, IInteractables
             audioSource.Play();
             Debug.Log("Playing dialogue: " + dialogueClip.name);
 
-            choice.setterIsChecked(Index);
+            audiocontroller.setterIsChecked(Index);
+            if (playerController != null)
+            {
+                playerController.enabled = false;
+                gameUI.SetActive(false);
+            }
 
             StartCoroutine(releaseAudioBus());
         }
@@ -57,6 +63,11 @@ public class DialoguePlayer : MonoBehaviour, IInteractables
     {
         yield return new WaitForSeconds(audioSource.clip.length);
         audiocontroller.isAudioPlaying = false;
+        if (playerController != null)
+        {
+            playerController.enabled = true;
+            gameUI.SetActive(true);
+        }
     }
 
 }

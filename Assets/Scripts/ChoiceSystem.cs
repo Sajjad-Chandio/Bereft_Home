@@ -5,13 +5,18 @@ using UnityEngine.Video;
 
 public class ChoiceSystem : MonoBehaviour
 {
+    private const int ELEM_SIZE = 8;
+
     [Header("UI Elements")]
     public GameObject choiceUI;
+    public GameObject gameUI;
     public Button journalButton;
     public Button gunButton;
     public TextMeshProUGUI objectiveText;
 
-    [Header("Video")]
+    [Header("Audio n Video")]
+    public AudioClip dialogueClip;
+    private AudioSource audioSource;
     public GameObject videoPanel; 
     public VideoPlayer videoPlayer;
     public VideoClip journalVideoClip; 
@@ -22,46 +27,41 @@ public class ChoiceSystem : MonoBehaviour
 
     private bool isChoiceActive = false;
 
-    
+    [Header("Variables")]
     public bool[] isChecked;
-    public bool allChecked;
-
-    public void setterIsChecked(int i)
-    {
-        if (!allChecked && !isChecked[i])
-        {
-            isChecked[i] = true;
-            allChecked = true;
-
-            for (int j = 0; j < 8; j++)
-            {
-                if (!isChecked[j])
-                    allChecked = false;
-            }
-
-            UpdateObjectiveText(); // Update UI whenever an objective is completed
-
-            if (allChecked)
-                unlockZone();
-        }
-    }
+    public int countCheck;
+    public bool isAudioPlaying;
 
     private void Start()
     {
         choiceUI.SetActive(false);
         videoPanel.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
 
         journalButton.onClick.AddListener(() => PlayVideo(journalVideoClip));
         gunButton.onClick.AddListener(() => PlayVideo(gunVideoClip));
 
-        isChecked = new bool[8];
-        for (int i = 0; i < 8; i++)
+        isChecked = new bool[ELEM_SIZE];
+        for (int i = 0; i < isChecked.Length; i++)
         {
             isChecked[i] = false;
         }
-        allChecked = false;
+        countCheck = 0;
 
         UpdateObjectiveText();
+    }
+
+    public void setterIsChecked(int i)
+    {
+        if (!(countCheck == isChecked.Length) && !isChecked[i])
+        {
+            isChecked[i] = true;
+            countCheck++;
+            UpdateObjectiveText(); // Update UI whenever an objective is completed
+
+            if (countCheck == isChecked.Length)
+                unlockZone();
+        }
     }
 
     // run when objective done
@@ -69,23 +69,24 @@ public class ChoiceSystem : MonoBehaviour
     {
         Collider collider = GetComponent<Collider>();
         if (collider != null)
-        {
             collider.isTrigger = true; // Set the collider as a trigger
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isChoiceActive)
-        {
+        if (!isAudioPlaying && !isChoiceActive && other.CompareTag("Player"))
             TriggerChoice();
-        }
     }
 
     private void TriggerChoice()
     {
         isChoiceActive = true;
         choiceUI.SetActive(true);
+        gameUI.SetActive(false);
+
+        audioSource.clip = dialogueClip;
+        audioSource.Play();
+        Debug.Log("Playing dialogue: " + dialogueClip.name);
 
         if (playerController != null)
         {
@@ -125,6 +126,7 @@ public class ChoiceSystem : MonoBehaviour
         }
 
         videoPanel.SetActive(false); // Hide the video panel after video finishes
+        gameUI.SetActive(true);
 
         if (playerController != null)
         {
@@ -138,13 +140,9 @@ public class ChoiceSystem : MonoBehaviour
 
     private void UpdateObjectiveText()
     {
-        int completedCount = 0;
-
-        foreach (bool isComplete in isChecked)
-        {
-            if (isComplete) completedCount++;
-        }
-
-        objectiveText.text = $"{completedCount}/{isChecked.Length} Objectives Completed";
+        objectiveText.text = countCheck < isChecked.Length ?
+        $"{countCheck}/{isChecked.Length} Objects Found\nListen to more objects" :
+        $"All objects found\nPlease go to bedroom" ;
     }
 }
+
