@@ -38,6 +38,9 @@ public class ChoiceSystem : MonoBehaviour
                 if (!isChecked[j])
                     allChecked = false;
             }
+
+            UpdateObjectiveText(); // Update UI whenever an objective is completed
+
             if (allChecked)
                 unlockZone();
         }
@@ -56,6 +59,8 @@ public class ChoiceSystem : MonoBehaviour
             isChecked[i] = false;
         }
         allChecked = false;
+
+        UpdateObjectiveText();
     }
 
     // run when objective done
@@ -134,4 +139,15 @@ public class ChoiceSystem : MonoBehaviour
         isChoiceActive = false;
     }
 
+    private void UpdateObjectiveText()
+    {
+        int completedCount = 0;
+
+        foreach (bool isComplete in isChecked)
+        {
+            if (isComplete) completedCount++;
+        }
+
+        objectiveText.text = $"{completedCount}/{isChecked.Length} Objectives Completed";
+    }
 }
