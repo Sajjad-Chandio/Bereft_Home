@@ -14,7 +14,7 @@ letter
 https://www.fab.com/listings/ee0bbb45-1b8f-4dbf-bcce-46e5f64d633d
 
 calendar
-https://www.fab.com/listings/62e0633c-2cb9-4f9a-94a2-403b03d1b5bf
+https://sketchfab.com/3d-models/a-soviet-calender-c-b6a9114906264ea6bcd8cddb3a31b4f0
 
 radio
 https://www.fab.com/listings/67f7c7e5-1735-4a77-82c1-58a5569c441b
@@ -57,3 +57,9 @@ https://www.fab.com/listings/fa6f1c5a-86ba-42c8-a817-804a11e0ff8a
 
 bed
 https://www.fab.com/listings/5fc3a46c-f3f2-46cd-9bed-935ec9df5ea9
+
+house
+https://sketchfab.com/3d-models/old-house-19a1121bab5a4aaaad4d973abe5b61cb
+
+door
+https://www.fab.com/listings/0cfec79e-21b6-420d-9147-d1e78eb6e58c

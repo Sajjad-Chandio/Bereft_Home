@@ -1,0 +1,566 @@
+{
+  "assetCategories": {
+    "decal": {
+      "door": {
+        "wood": {}
+      }
+    }
+  },
+  "averageColor": "#C5C8CB",
+  "categories": [
+    "atlas",
+    "decals",
+    "misc"
+  ],
+  "comp_version": 1,
+  "description": "",
+  "displacementBias": 0.13812,
+  "displacementCalibrationAccuracy": 0.967981,
+  "displacementScale": 27.043518,
+  "environment": {
+    "biome": "undefined",
+    "region": "undefined"
+  },
+  "highest_available_res": 8192,
+  "id": "tbwjedeq",
+  "json": {
+    "contentLength": 12079,
+    "uri": "tbwjedeq.json"
+  },
+  "maps": [
+    {
+      "averageColor": "#FBFBFB",
+      "bitDepth": 32,
+      "colorSpace": "sRGB",
+      "contentLength": 37162224,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "AO",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "ao",
+      "uri": "tbwjedeq_8K_AO.exr"
+    },
+    {
+      "averageColor": "#FBFBFB",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 6839922,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "AO",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "ao",
+      "uri": "tbwjedeq_8K_AO.jpg"
+    },
+    {
+      "averageColor": "#C5C8CB",
+      "bitDepth": 16,
+      "colorSpace": "sRGB",
+      "contentLength": 119771228,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "Basecolor",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "basecolor",
+      "uri": "tbwjedeq_8K_Basecolor.exr"
+    },
+    {
+      "averageColor": "#C5C8CB",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 26044023,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "Basecolor",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "basecolor",
+      "uri": "tbwjedeq_8K_Basecolor.jpg"
+    },
+    {
+      "averageColor": "#808080",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 52322789,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "Bump",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "bump",
+      "uri": "tbwjedeq_8K_Bump.exr"
+    },
+    {
+      "averageColor": "#808080",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 2369473,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "Bump",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "bump",
+      "uri": "tbwjedeq_8K_Bump.jpg"
+    },
+    {
+      "averageColor": "#FFFFFF",
+      "bitDepth": 32,
+      "colorSpace": "sRGB",
+      "contentLength": 117323618,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 255,
+      "name": "Cavity",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "cavity",
+      "uri": "tbwjedeq_8K_Cavity.exr"
+    },
+    {
+      "averageColor": "#FFFFFF",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 25925792,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 255,
+      "name": "Cavity",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "cavity",
+      "uri": "tbwjedeq_8K_Cavity.jpg"
+    },
+    {
+      "averageColor": "#C8C8C8",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 17221904,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "Displacement",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "displacement",
+      "uri": "tbwjedeq_8K_Displacement.exr"
+    },
+    {
+      "averageColor": "#C8C8C8",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 1392205,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "Displacement",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "displacement",
+      "uri": "tbwjedeq_8K_Displacement.jpg"
+    },
+    {
+      "averageColor": "#939393",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 73397026,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "Gloss",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "gloss",
+      "uri": "tbwjedeq_8K_Gloss.exr"
+    },
+    {
+      "averageColor": "#939393",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 10518117,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "Gloss",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "gloss",
+      "uri": "tbwjedeq_8K_Gloss.jpg"
+    },
+    {
+      "averageColor": "#C7C6FD",
+      "bitDepth": 16,
+      "colorSpace": "Linear",
+      "contentLength": 96316688,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "Normal",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "normal",
+      "uri": "tbwjedeq_8K_Normal.exr"
+    },
+    {
+      "averageColor": "#C7C6FD",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 33974841,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "Normal",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "normal",
+      "uri": "tbwjedeq_8K_Normal.jpg"
+    },
+    {
+      "averageColor": "#6F6F6F",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 3300330,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "Opacity",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "opacity",
+      "uri": "tbwjedeq_8K_Opacity.exr"
+    },
+    {
+      "averageColor": "#6F6F6F",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 961856,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "Opacity",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "opacity",
+      "uri": "tbwjedeq_8K_Opacity.jpg"
+    },
+    {
+      "averageColor": "#6C6C6C",
+      "bitDepth": 32,
+      "colorSpace": "Linear",
+      "contentLength": 66393006,
+      "maxIntensity": 255,
+      "mimeType": "image/x-exr",
+      "minIntensity": 0,
+      "name": "Roughness",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "roughness",
+      "uri": "tbwjedeq_8K_Roughness.exr"
+    },
+    {
+      "averageColor": "#6C6C6C",
+      "bitDepth": 8,
+      "colorSpace": "Linear",
+      "contentLength": 11046167,
+      "maxIntensity": 255,
+      "mimeType": "image/jpeg",
+      "minIntensity": 0,
+      "name": "Roughness",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "roughness",
+      "uri": "tbwjedeq_8K_Roughness.jpg"
+    },
+    {
+      "averageColor": "#383838",
+      "bitDepth": 16,
+      "colorSpace": "sRGB",
+      "contentLength": 113153385,
+      "maxIntensity": 56,
+      "mimeType": "image/x-exr",
+      "minIntensity": 56,
+      "name": "Specular",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "specular",
+      "uri": "tbwjedeq_8K_Specular.exr"
+    },
+    {
+      "averageColor": "#383838",
+      "bitDepth": 8,
+      "colorSpace": "sRGB",
+      "contentLength": 14624826,
+      "maxIntensity": 56,
+      "mimeType": "image/jpeg",
+      "minIntensity": 56,
+      "name": "Specular",
+      "physicalSize": "2x2",
+      "resolution": "8192x8192",
+      "type": "specular",
+      "uri": "tbwjedeq_8K_Specular.jpg"
+    }
+  ],
+  "meta": [
+    {
+      "key": "scanArea",
+      "name": "Scan Area",
+      "value": "2x2 m"
+    },
+    {
+      "key": "height",
+      "name": "Height",
+      "value": "0.05 m"
+    },
+    {
+      "key": "tileable",
+      "name": "Tileable",
+      "value": false
+    },
+    {
+      "key": "texelDensity",
+      "name": "Texel Density",
+      "value": "4096 px/m"
+    },
+    {
+      "key": "calibration",
+      "name": "Calibration",
+      "value": "GretagMacbeth ColorChecker Color Rendition Chart"
+    },
+    {
+      "key": "scanner",
+      "name": "Scanner",
+      "value": "MKX"
+    }
+  ],
+  "models": [],
+  "name": "Old Wooden Door",
+  "pack": null,
+  "physicalSize": null,
+  "points": 1,
+  "previews": {
+    "images": [
+      {
+        "contentLength": 173303,
+        "resolution": "360x360",
+        "tags": [
+          "thumb"
+        ],
+        "uri": "tbwjedeq_Grid_360.png"
+      },
+      {
+        "contentLength": 229083,
+        "resolution": "420x420",
+        "tags": [
+          "thumb"
+        ],
+        "uri": "tbwjedeq_Grid_420.png"
+      },
+      {
+        "contentLength": 633235,
+        "resolution": "720x720",
+        "tags": [
+          "thumb",
+          "retina"
+        ],
+        "uri": "tbwjedeq_Grid_720.png"
+      },
+      {
+        "contentLength": 851000,
+        "resolution": "840x840",
+        "tags": [
+          "thumb",
+          "retina"
+        ],
+        "uri": "tbwjedeq_Grid_840.png"
+      },
+      {
+        "contentLength": 1895237,
+        "resolution": "1440x768",
+        "tags": [
+          "preview",
+          "clay"
+        ],
+        "uri": "tbwjedeq_PopupClay_1440.png"
+      },
+      {
+        "contentLength": 3492917,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview",
+          "clay"
+        ],
+        "uri": "tbwjedeq_PopupClay_1920.png"
+      },
+      {
+        "contentLength": 7369662,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "clay",
+          "retina"
+        ],
+        "uri": "tbwjedeq_PopupClay_2880.png"
+      },
+      {
+        "contentLength": 13336154,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "clay",
+          "retina"
+        ],
+        "uri": "tbwjedeq_PopupClay_3840.png"
+      },
+      {
+        "contentLength": 1937124,
+        "resolution": "1440x768",
+        "tags": [
+          "preview"
+        ],
+        "uri": "tbwjedeq_Popup_1440.png"
+      },
+      {
+        "contentLength": 3622458,
+        "resolution": "1920x1080",
+        "tags": [
+          "preview"
+        ],
+        "uri": "tbwjedeq_Popup_1920.png"
+      },
+      {
+        "contentLength": 7590183,
+        "resolution": "2880x1536",
+        "tags": [
+          "preview",
+          "retina"
+        ],
+        "uri": "tbwjedeq_Popup_2880.png"
+      },
+      {
+        "contentLength": 14170353,
+        "resolution": "3840x2160",
+        "tags": [
+          "preview",
+          "retina"
+        ],
+        "uri": "tbwjedeq_Popup_3840.png"
+      }
+    ],
+    "relativeSize": "1x1",
+    "scaleReferences": []
+  },
+  "process_date": "2024-04-16 11:35:13",
+  "properties": [],
+  "referencePreviews": {
+    "maps": [],
+    "models": []
+  },
+  "references": [],
+  "revised": false,
+  "semanticTags": {
+    "architectural_style": {},
+    "asset_type": "decal",
+    "color": [
+      "white"
+    ],
+    "contains": [
+      "door"
+    ],
+    "descriptive": [
+      "painted",
+      " old",
+      " grime",
+      " faint"
+    ],
+    "environment": [
+      "rural",
+      "industrial"
+    ],
+    "industry": [
+      "games",
+      "VFX"
+    ],
+    "interior_exterior": [
+      "interior",
+      "exterior"
+    ],
+    "latin_name": [],
+    "locations": {
+      "Global": {
+        "Global": {}
+      }
+    },
+    "maxSize": 2,
+    "minSize": 2,
+    "name": "Old Wooden Door",
+    "orientation": [
+      "wall"
+    ],
+    "resolution": 8192,
+    "season": [],
+    "state": [
+      "old",
+      "damaged"
+    ],
+    "subject_matter": "manmade",
+    "theme": [
+      "cottage",
+      " hut",
+      " cabin"
+    ]
+  },
+  "tags": [
+    "decal",
+    "old",
+    "white",
+    "wooden",
+    "wood",
+    "archviz"
+  ],
+  "texelDensity": 4096,
+  "texture_type": "basic",
+  "ue_plugin_archives": [
+    {
+      "contentLength": 131464953,
+      "gltfVersion": "2.0",
+      "tier": 0,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_0/tbwjedeq_tier_0.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 38674259,
+      "gltfVersion": "2.0",
+      "tier": 1,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_1/tbwjedeq_tier_1.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 10330551,
+      "gltfVersion": "2.0",
+      "tier": 2,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_2/tbwjedeq_tier_2.zip",
+      "version": 1
+    },
+    {
+      "contentLength": 1460782,
+      "gltfVersion": "2.0",
+      "tier": 3,
+      "type": "gltf",
+      "uri": "ue_plugin_archives/tier_3/tbwjedeq_tier_3.zip",
+      "version": 1
+    }
+  ],
+  "version": 2
+}

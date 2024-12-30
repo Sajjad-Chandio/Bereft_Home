@@ -19,12 +19,49 @@ public class ChoiceSystem : MonoBehaviour
 
     private bool isChoiceActive = false;
 
+    
+    public bool[] isChecked;
+    public bool allChecked;
+
+    public void setterIsChecked(int i)
+    {
+        if (!allChecked && !isChecked[i])
+        {
+            isChecked[i] = true;
+            allChecked = true;
+            for (int j = 0; j < 8; j++)
+            {
+                if (!isChecked[j])
+                    allChecked = false;
+            }
+            if (allChecked)
+                unlockZone();
+        }
+    }
+
     private void Start()
     {
         choiceUI.SetActive(false);
 
         journalButton.onClick.AddListener(() => ChooseOption(journalClip));
         gunButton.onClick.AddListener(() => ChooseOption(gunClip));
+
+        isChecked = new bool[8];
+        for (int i = 0; i < 8; i++)
+        {
+            isChecked[i] = false;
+        }
+        allChecked = false;
+    }
+
+    // run when objective done
+    private void unlockZone()
+    {
+        Collider collider = GetComponent<Collider>();
+        if (collider != null)
+        {
+            collider.isTrigger = true;  // Set the collider as a trigger
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,6 +90,8 @@ public class ChoiceSystem : MonoBehaviour
         if (playerController != null)
         {
             playerController.enabled = false;
+            Cursor.lockState = CursorLockMode.None; // Unlocks the cursor
+            Cursor.visible = true;                  // Makes the cursor visible
         }
         else
         {
@@ -84,8 +123,11 @@ public class ChoiceSystem : MonoBehaviour
         if (playerController != null)
         {
             playerController.enabled = true;
+            Cursor.lockState = CursorLockMode.Locked; // Locks the cursor again for gameplay
+            Cursor.visible = false;                   // Hides the cursor
         }
 
         isChoiceActive = false;
     }
+
 }

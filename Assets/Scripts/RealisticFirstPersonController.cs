@@ -32,6 +32,11 @@ public class RealisticFirstPersonController : MonoBehaviour
     private float headBobTimer = 0f;
     private Vector3 cameraStartPosition;
 
+    [Header("Audio")]
+    public AudioClip startClip;
+    public audiocontroller audiocontroller;
+    private AudioSource audioSource;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -40,6 +45,45 @@ public class RealisticFirstPersonController : MonoBehaviour
         cameraStartPosition = cameraTransform.localPosition;
 
         Cursor.lockState = CursorLockMode.Locked;
+        
+        // Audio stuff
+        audiocontroller = GameObject.Find("AudioControl").GetComponent<audiocontroller>();
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
+        audioSource.spatialBlend = 1.0f;
+        audioSource.maxDistance = 10f;
+
+        audioSource.Stop();
+
+        if (startClip != null && !audiocontroller.isAudioPlaying && !audioSource.isPlaying)
+        {
+            audiocontroller.isAudioPlaying = true;
+            audioSource.clip = startClip;
+            audioSource.Play();
+            Debug.Log("Playing dialogue: " + startClip.name);
+
+            StartCoroutine(releaseAudioBus());
+        }
+        else if (audiocontroller.isAudioPlaying || audioSource.isPlaying)
+        {
+            Debug.Log("Dialogue is already playing.");
+        }
+        else
+        {
+            Debug.LogWarning("No dialogue clip assigned to this object.");
+        }
+    }
+
+    private System.Collections.IEnumerator releaseAudioBus()
+    {
+        yield return new WaitForSeconds(audioSource.clip.length);
+        audiocontroller.isAudioPlaying = false;
     }
 
     void Update()

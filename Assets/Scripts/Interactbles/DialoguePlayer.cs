@@ -3,10 +3,17 @@ using UnityEngine;
 public class DialoguePlayer : MonoBehaviour, IInteractables
 {
     public AudioClip dialogueClip;
+    private audiocontroller audiocontroller;
     private AudioSource audioSource;
+
+    public int Index;
+    private ChoiceSystem choice;
 
     void Start()
     {
+        audiocontroller = GameObject.Find("AudioControl").GetComponent<audiocontroller>();
+        choice = GameObject.Find("ChoiceSystem").GetComponent<ChoiceSystem>();
+
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -25,13 +32,18 @@ public class DialoguePlayer : MonoBehaviour, IInteractables
 
     public void Interact()
     {
-        if (dialogueClip != null && !audioSource.isPlaying)
+        if (dialogueClip != null && !audiocontroller.isAudioPlaying && !audioSource.isPlaying)
         {
+            audiocontroller.isAudioPlaying = true;
             audioSource.clip = dialogueClip;
             audioSource.Play();
             Debug.Log("Playing dialogue: " + dialogueClip.name);
+
+            choice.setterIsChecked(Index);
+
+            StartCoroutine(releaseAudioBus());
         }
-        else if (audioSource.isPlaying)
+        else if (audiocontroller.isAudioPlaying || audioSource.isPlaying)
         {
             Debug.Log("Dialogue is already playing.");
         }
@@ -40,4 +52,11 @@ public class DialoguePlayer : MonoBehaviour, IInteractables
             Debug.LogWarning("No dialogue clip assigned to this object.");
         }
     }
+
+    private System.Collections.IEnumerator releaseAudioBus()
+    {
+        yield return new WaitForSeconds(audioSource.clip.length);
+        audiocontroller.isAudioPlaying = false;
+    }
+
 }

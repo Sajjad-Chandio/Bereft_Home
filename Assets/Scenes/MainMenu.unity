@@ -269,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &167547400
 RectTransform:
   m_ObjectHideFlags: 0
@@ -341,6 +341,7 @@ GameObject:
   - component: {fileID: 379814003}
   - component: {fileID: 379814005}
   - component: {fileID: 379814004}
+  - component: {fileID: 379814006}
   m_Layer: 5
   m_Name: CreditsTMPro
   m_TagString: Untagged
@@ -387,7 +388,28 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Credits Here:'
+  m_text: "    <link=\"https://www.fab.com/listings/03ce6522-7cd6-4a28-a421-1bace8b8be75\">Scarf</link>\r\n   
+    <link=\"https://www.fab.com/listings/a954cc4c-63b4-4851-9141-6a2953c5cd35\">Mirror</link>\r\n   
+    <link=\"https://www.fab.com/listings/4abdd631-8bc3-4fe8-8867-eede916832f0\">Photo</link>\r\n   
+    <link=\"https://www.fab.com/listings/681c0c68-a5ed-4c65-b222-e6a30a00c69d\">Journal</link>\r\n   
+    <link=\"https://www.fab.com/listings/ee0bbb45-1b8f-4dbf-bcce-46e5f64d633d\">Letter</link>\r\n   
+    <link=\"https://sketchfab.com/3d-models/a-soviet-calender-c-b6a9114906264ea6bcd8cddb3a31b4f0\">Calendar</link>\r\n   
+    <link=\"https://www.fab.com/listings/67f7c7e5-1735-4a77-82c1-58a5569c441b\">Radio</link>\r\n   
+    <link=\"https://www.fab.com/listings/47dfac60-2a01-4d4e-82d0-2136aa5c9c42\">Pistol</link>\r\n   
+    <link=\"https://www.fab.com/listings/85f9765a-9f36-41cc-b93a-387df317358a\">Chair</link>\r\n   
+    <link=\"https://www.fab.com/listings/67971e76-0b21-4f01-b6aa-8cf383db53d1\">Lamp</link>\r\n   
+    \r\n    <link=\"https://www.fab.com/listings/71e15ead-424f-4805-ad79-e4256b5cc022\">Bookshelf</link>\r\n   
+    <link=\"https://www.fab.com/listings/dd0c9361-0c79-4532-b1f3-c8333f79451d\">Shelf</link>\r\n   
+    <link=\"https://www.fab.com/listings/ac51c33e-1379-4b4d-95c2-446336743571\">Cabinet</link>\r\n   
+    <link=\"https://www.fab.com/listings/2b70086f-7dcb-4857-a1e5-6aa84c207d1f\">Table</link>\r\n   
+    <link=\"https://www.fab.com/listings/8f66c7a9-4733-47a5-b770-39a3ca63a2a2\">Stool</link>\r\n   
+    <link=\"https://www.fab.com/listings/d4a220d1-a235-488a-8658-d93ac0f926d2\">Round
+    Table</link>\r\n    <link=\"https://www.fab.com/listings/dad4b0ba-c780-43a5-92e8-51a06f1252ba\">Cupboard</link>\r\n   
+    <link=\"https://www.fab.com/listings/469cc8f9-9e97-4de3-adcf-8fea6139b36d\">Shelf
+    Cabinet</link>\r\n    <link=\"https://www.fab.com/listings/fa6f1c5a-86ba-42c8-a817-804a11e0ff8a\">Toy</link>\r\n   
+    <link=\"https://www.fab.com/listings/5fc3a46c-f3f2-46cd-9bed-935ec9df5ea9\">Bed</link>\r\n   
+    \r\n    <link=\"https://sketchfab.com/3d-models/old-house-19a1121bab5a4aaaad4d973abe5b61cb\">House</link>\r\n   
+    <link=\"https://www.fab.com/listings/0cfec79e-21b6-420d-9147-d1e78eb6e58c\">Door</link>\r\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -466,6 +488,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379814002}
   m_CullTransparentMesh: 1
+--- !u!114 &379814006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379814002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcccd1690da1a24386aba4d39f55227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 379814004}
 --- !u!1 &436738160
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &440505319
 RectTransform:
   m_ObjectHideFlags: 0
