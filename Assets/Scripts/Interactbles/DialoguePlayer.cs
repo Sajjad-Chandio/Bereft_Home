@@ -12,7 +12,7 @@ public class DialoguePlayer : MonoBehaviour, IInteractables
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
-        
+
         audioSource.playOnAwake = false;
         audioSource.spatialBlend = 1.0f;
         audioSource.maxDistance = 10f;

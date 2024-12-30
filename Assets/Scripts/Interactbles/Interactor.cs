@@ -4,9 +4,9 @@ using TMPro;
 public class Interactor : MonoBehaviour
 {
     public Transform cameraTransform;
-    public float range = 3f;          
-    public float startOffset = 0.25f; 
-    public TextMeshProUGUI interactMessage; 
+    public float range = 3f;
+    public float startOffset = 0.25f;
+    public TextMeshProUGUI interactMessage;
 
     void Update()
     {
