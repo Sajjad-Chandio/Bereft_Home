@@ -4309,7 +4309,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.502
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6448,6 +6448,7 @@ MonoBehaviour:
   choiceUI: {fileID: 744650660}
   journalButton: {fileID: 1667919584}
   gunButton: {fileID: 1940357115}
+  objectiveText: {fileID: 0}
   dialogAudioSource: {fileID: 0}
   dialogClip: {fileID: 0}
   journalClip: {fileID: 0}
