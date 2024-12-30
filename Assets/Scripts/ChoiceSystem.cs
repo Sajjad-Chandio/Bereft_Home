@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.Video;
 
 public class ChoiceSystem : MonoBehaviour
 {
@@ -7,6 +9,7 @@ public class ChoiceSystem : MonoBehaviour
     public GameObject choiceUI;
     public Button journalButton;
     public Button gunButton;
+    public TextMeshProUGUI objectiveText;
 
     [Header("Audio")]
     public AudioSource dialogAudioSource;
@@ -29,6 +32,7 @@ public class ChoiceSystem : MonoBehaviour
         {
             isChecked[i] = true;
             allChecked = true;
+
             for (int j = 0; j < 8; j++)
             {
                 if (!isChecked[j])
@@ -60,7 +64,7 @@ public class ChoiceSystem : MonoBehaviour
         Collider collider = GetComponent<Collider>();
         if (collider != null)
         {
-            collider.isTrigger = true;  // Set the collider as a trigger
+            collider.isTrigger = true; // Set the collider as a trigger
         }
     }
 
