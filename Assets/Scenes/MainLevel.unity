@@ -6538,10 +6538,11 @@ MonoBehaviour:
   choiceUI: {fileID: 744650660}
   journalButton: {fileID: 1667919584}
   gunButton: {fileID: 1940357115}
-  dialogAudioSource: {fileID: 1843402668}
-  dialogClip: {fileID: 8300000, guid: 951b9c52cb6597d4299fc231ea9f211d, type: 3}
-  journalClip: {fileID: 8300000, guid: 5f75ec13af3672a42a47421bf4f85c55, type: 3}
-  gunClip: {fileID: 8300000, guid: fdd3839e628cf8140811b2e5450ec224, type: 3}
+  objectiveText: {fileID: 1462971603}
+  videoPanel: {fileID: 1086037048}
+  videoPlayer: {fileID: 1601527851}
+  journalVideoClip: {fileID: 32900000, guid: 6dcd74625f881af4f899497aa1832e2d, type: 3}
+  gunVideoClip: {fileID: 32900000, guid: 6fe81e63b1d752643a83655ad581eff3, type: 3}
   playerController: {fileID: 1043205121}
   isChecked: 
   allChecked: 0
@@ -7922,10 +7923,11 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1043205126}
-  - {fileID: 67040565}
   - {fileID: 846184307}
   - {fileID: 1317088532}
   - {fileID: 655618498}
   - {fileID: 744650664}
   - {fileID: 746729975}
   - {fileID: 257618164}
+  - {fileID: 1601527852}
+  - {fileID: 67040565}
