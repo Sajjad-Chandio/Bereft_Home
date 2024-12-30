@@ -11,11 +11,11 @@ public class ChoiceSystem : MonoBehaviour
     public Button gunButton;
     public TextMeshProUGUI objectiveText;
 
-    [Header("Audio")]
-    public AudioSource dialogAudioSource;
-    public AudioClip dialogClip;
-    public AudioClip journalClip;
-    public AudioClip gunClip;
+    [Header("Video")]
+    public GameObject videoPanel; 
+    public VideoPlayer videoPlayer;
+    public VideoClip journalVideoClip; 
+    public VideoClip gunVideoClip;   
 
     [Header("Player Movement")]
     public RealisticFirstPersonController playerController;
@@ -49,9 +49,10 @@ public class ChoiceSystem : MonoBehaviour
     private void Start()
     {
         choiceUI.SetActive(false);
+        videoPanel.SetActive(false);
 
-        journalButton.onClick.AddListener(() => ChooseOption(journalClip));
-        gunButton.onClick.AddListener(() => ChooseOption(gunClip));
+        journalButton.onClick.AddListener(() => PlayVideo(journalVideoClip));
+        gunButton.onClick.AddListener(() => PlayVideo(gunVideoClip));
 
         isChecked = new bool[8];
         for (int i = 0; i < 8; i++)
@@ -86,16 +87,6 @@ public class ChoiceSystem : MonoBehaviour
         isChoiceActive = true;
         choiceUI.SetActive(true);
 
-        if (dialogAudioSource != null && dialogClip != null)
-        {
-            dialogAudioSource.clip = dialogClip;
-            dialogAudioSource.Play();
-        }
-        else
-        {
-            Debug.LogWarning("Dialog audio source or clip is missing.");
-        }
-
         if (playerController != null)
         {
             playerController.enabled = false;
@@ -108,26 +99,32 @@ public class ChoiceSystem : MonoBehaviour
         }
     }
 
-    private void ChooseOption(AudioClip choiceClip)
+    private void PlayVideo(VideoClip videoClip)
     {
-        if (dialogAudioSource != null && choiceClip != null)
+        if (videoClip != null)
         {
-            dialogAudioSource.clip = choiceClip;
-            dialogAudioSource.Play();
+            videoPanel.SetActive(true); // Show the video panel
+            videoPlayer.clip = videoClip;
+            videoPlayer.Play();
         }
         else
         {
-            Debug.LogWarning("Choice audio source or clip is missing.");
+            Debug.LogWarning("Video clip is missing.");
         }
 
         choiceUI.SetActive(false);
 
-        StartCoroutine(ReEnableMovementAfterAudio());
+        StartCoroutine(WaitForVideoToFinish());
     }
 
-    private System.Collections.IEnumerator ReEnableMovementAfterAudio()
+    private System.Collections.IEnumerator WaitForVideoToFinish()
     {
-        yield return new WaitForSeconds(dialogAudioSource.clip.length);
+        while (videoPlayer.isPlaying)
+        {
+            yield return null;
+        }
+
+        videoPanel.SetActive(false); // Hide the video panel after video finishes
 
         if (playerController != null)
         {
