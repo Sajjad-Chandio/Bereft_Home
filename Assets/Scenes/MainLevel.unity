@@ -4395,68 +4395,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993571347}
   m_CullTransparentMesh: 1
---- !u!4 &1009885739 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 34ed565b15b3aba468674d5bbda20d4e, type: 3}
-  m_PrefabInstance: {fileID: 1693543298}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1037967379
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 686821210}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
-      propertyPath: m_Name
-      value: SKM_Body_Full
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e9bdbba9a60f3c84e96fee0f490f211a, type: 3}
 --- !u!1 &1043205120
 GameObject:
   m_ObjectHideFlags: 0
@@ -4855,10 +4793,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054580240}
   m_CullTransparentMesh: 1
---- !u!4 &1113969725 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9a4dc8d4fdfc5db4482fd6f00ade1064, type: 3}
-  m_PrefabInstance: {fileID: 1232972922}
+--- !u!1 &1086037048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -7063,10 +7002,11 @@ MonoBehaviour:
   choiceUI: {fileID: 744650660}
   journalButton: {fileID: 1667919584}
   gunButton: {fileID: 1940357115}
-  dialogAudioSource: {fileID: 1843402668}
-  dialogClip: {fileID: 8300000, guid: 951b9c52cb6597d4299fc231ea9f211d, type: 3}
-  journalClip: {fileID: 8300000, guid: 5f75ec13af3672a42a47421bf4f85c55, type: 3}
-  gunClip: {fileID: 8300000, guid: fdd3839e628cf8140811b2e5450ec224, type: 3}
+  objectiveText: {fileID: 1462971603}
+  videoPanel: {fileID: 1086037048}
+  videoPlayer: {fileID: 1601527851}
+  journalVideoClip: {fileID: 32900000, guid: 6dcd74625f881af4f899497aa1832e2d, type: 3}
+  gunVideoClip: {fileID: 32900000, guid: 6fe81e63b1d752643a83655ad581eff3, type: 3}
   playerController: {fileID: 1043205121}
   isChecked: 
   allChecked: 0
