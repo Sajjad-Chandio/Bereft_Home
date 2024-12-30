@@ -6448,7 +6448,7 @@ MonoBehaviour:
   choiceUI: {fileID: 744650660}
   journalButton: {fileID: 1667919584}
   gunButton: {fileID: 1940357115}
-  objectiveText: {fileID: 0}
+  objectiveText: {fileID: 1462971603}
   dialogAudioSource: {fileID: 0}
   dialogClip: {fileID: 0}
   journalClip: {fileID: 0}
