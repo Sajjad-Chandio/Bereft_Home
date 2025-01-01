@@ -45,6 +45,9 @@ public class PauseMenuController : MonoBehaviour
         {
             audio.Pause();
         }
+        
+        Cursor.lockState = CursorLockMode.None; // Unlocks the cursor
+        Cursor.visible = true;                  // Makes the cursor visible
     }
 
     public void ResumeGame()
@@ -58,6 +61,9 @@ public class PauseMenuController : MonoBehaviour
         {
             audio.UnPause();
         }
+        
+        Cursor.lockState = CursorLockMode.Locked; // Locks the cursor again for gameplay
+        Cursor.visible = false;                   // Hides the cursor
     }
 
     public void QuitToMainMenu()
