@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class ChoiceSystem : MonoBehaviour
 {
@@ -86,6 +87,8 @@ public class ChoiceSystem : MonoBehaviour
 
         audioSource.clip = dialogueClip;
         audioSource.Play();
+        isAudioPlaying = true;
+        StartCoroutine(releaseAudioBus());
         Debug.Log("Playing dialogue: " + dialogueClip.name);
 
         if (playerController != null)
@@ -100,8 +103,19 @@ public class ChoiceSystem : MonoBehaviour
         }
     }
 
+    private System.Collections.IEnumerator releaseAudioBus()
+    {
+        yield return new WaitForSeconds(audioSource.clip.length);
+        isAudioPlaying = false;
+    }
+
     private void PlayVideo(VideoClip videoClip)
     {
+        if(isAudioPlaying)
+        {
+            Debug.LogWarning("Dialogue playing");
+            return;
+        }
         if (videoClip != null)
         {
             videoPanel.SetActive(true); // Show the video panel
@@ -124,18 +138,20 @@ public class ChoiceSystem : MonoBehaviour
         {
             yield return null;
         }
+        SceneManager.LoadScene("EndLevel");
 
-        videoPanel.SetActive(false); // Hide the video panel after video finishes
-        gameUI.SetActive(true);
+        // videoPanel.SetActive(false); // Hide the video panel after video finishes
+        // gameUI.SetActive(true);
 
-        if (playerController != null)
-        {
-            playerController.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked; // Locks the cursor again for gameplay
-            Cursor.visible = false;                   // Hides the cursor
-        }
+        // if (playerController != null)
+        // {
+        //     playerController.enabled = true;
+        //     Cursor.lockState = CursorLockMode.Locked; // Locks the cursor again for gameplay
+        //     Cursor.visible = false;                   // Hides the cursor
+        // }
 
-        isChoiceActive = false;
+        // isChoiceActive = false;
+
     }
 
     private void UpdateObjectiveText()
