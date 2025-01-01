@@ -9,6 +9,7 @@ public class PauseMenuController : MonoBehaviour
 
     void Start()
     {
+        pauseMenuPanel.SetActive(false);
         if (audioSources.Length == 0)
         {
             audioSources = FindObjectsOfType<AudioSource>();
