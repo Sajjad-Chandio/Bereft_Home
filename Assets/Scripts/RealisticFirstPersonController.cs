@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(CharacterController))]
 public class RealisticFirstPersonController : MonoBehaviour
@@ -37,6 +39,11 @@ public class RealisticFirstPersonController : MonoBehaviour
     public ChoiceSystem audiocontroller;
     private AudioSource audioSource;
 
+    public GameObject subtitlePanel;
+    public string subtitleText;
+    private TextMeshProUGUI subtitle;
+
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -48,6 +55,8 @@ public class RealisticFirstPersonController : MonoBehaviour
         
         // Audio stuff
         // audiocontroller = GameObject.Find("AudioControl").GetComponent<audiocontroller>();
+        subtitle = subtitlePanel.GetComponent<TextMeshProUGUI>();
+        subtitlePanel.SetActive(false);
 
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
@@ -68,6 +77,9 @@ public class RealisticFirstPersonController : MonoBehaviour
             audioSource.Play();
             Debug.Log("Playing dialogue: " + startClip.name);
 
+            subtitle.text = subtitleText;
+            subtitlePanel.SetActive(true);
+
             StartCoroutine(releaseAudioBus());
         }
         else if (audiocontroller.isAudioPlaying || audioSource.isPlaying)
@@ -84,6 +96,7 @@ public class RealisticFirstPersonController : MonoBehaviour
     {
         yield return new WaitForSeconds(audioSource.clip.length);
         audiocontroller.isAudioPlaying = false;
+        subtitlePanel.SetActive(false);
     }
 
     void Update()

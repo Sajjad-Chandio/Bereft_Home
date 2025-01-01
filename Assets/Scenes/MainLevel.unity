@@ -818,6 +818,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueClip: {fileID: 8300000, guid: bef5d9cb83b78d940a980db873b452b8, type: 3}
   gameUI: {fileID: 1671496647}
+  subtitlePanel: {fileID: 960327975}
+  subtitleText: Your faces are all I have left. But even these are fading, like smoke
+    slipping through my fingers.
   Index: 5
   audiocontroller: {fileID: 1843402666}
   playerController: {fileID: 1043205121}
@@ -1851,6 +1854,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueClip: {fileID: 8300000, guid: 6e23ff6a73295b54f98433215de68165, type: 3}
   gameUI: {fileID: 1671496647}
+  subtitlePanel: {fileID: 960327975}
+  subtitleText: The silence screams louder than words. Just like in the camps...
+    when the air was heavy with everything unsaid.
   Index: 4
   audiocontroller: {fileID: 1843402666}
   playerController: {fileID: 1043205121}
@@ -3004,6 +3010,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueClip: {fileID: 8300000, guid: 98fcf42aed8558f4383eb12db85a65a0, type: 3}
   gameUI: {fileID: 1671496647}
+  subtitlePanel: {fileID: 960327975}
+  subtitleText: That date... the day they came. The day my world ended.
   Index: 6
   audiocontroller: {fileID: 1843402666}
   playerController: {fileID: 1043205121}
@@ -3020,7 +3028,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.692
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3697,6 +3705,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 19b512287b01f624e947e3ba9415d90c, type: 3}
     - target: {fileID: 4227887612452085063, guid: 71e4c0e10906ff446825b059c67df290, type: 3}
+      propertyPath: subtitleText
+      value: Dearest Anna, every day I dream of our reunion. I hold onto the hope
+        that this nightmare will end, and we will sit together by the fire once more.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227887612452085063, guid: 71e4c0e10906ff446825b059c67df290, type: 3}
+      propertyPath: subtitlePanel
+      value: 
+      objectReference: {fileID: 960327975}
+    - target: {fileID: 4227887612452085063, guid: 71e4c0e10906ff446825b059c67df290, type: 3}
       propertyPath: audiocontroller
       value: 
       objectReference: {fileID: 1843402666}
@@ -3930,6 +3947,7 @@ RectTransform:
   - {fileID: 1089883638}
   - {fileID: 1671496648}
   - {fileID: 692179408}
+  - {fileID: 960327976}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3966,6 +3984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 1089883637}
+  subtitlePanel: {fileID: 960327975}
   audioSources:
   - {fileID: 1710911601}
   - {fileID: 6075857051656022310}
@@ -4277,6 +4296,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueClip: {fileID: 8300000, guid: 1c826478b6b747f489bcc8507aaec873, type: 3}
   gameUI: {fileID: 1671496647}
+  subtitlePanel: {fileID: 960327975}
+  subtitleText: "What do I see? A man broken by war? A survivor who endured when
+    so many couldn\u2019t? Or someone too afraid to face the truth?"
   Index: 2
   audiocontroller: {fileID: 1843402666}
   playerController: {fileID: 1043205121}
@@ -4403,6 +4425,143 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 602aee91f4bc8514e820c425c6c5ed33, type: 3}
   m_PrefabInstance: {fileID: 913846921}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &960327975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 960327976}
+  - component: {fileID: 960327978}
+  - component: {fileID: 960327977}
+  m_Layer: 5
+  m_Name: Subtitle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &960327976
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960327975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 846184307}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 50}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &960327977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960327975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "This was once a home filled with laughter, hope, and love. Now, it is
+    but a shadow of what it was\u2014a shell haunted by memories."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 3144352a0e712c4468aa0437111142dd, type: 2}
+  m_sharedMaterial: {fileID: -4942326696641158590, guid: 3144352a0e712c4468aa0437111142dd, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24.9
+  m_fontSizeBase: 24.9
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 2
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 1024
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: -337.5006, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &960327978
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960327975}
+  m_CullTransparentMesh: 1
 --- !u!1 &993571347
 GameObject:
   m_ObjectHideFlags: 0
@@ -4587,6 +4746,9 @@ MonoBehaviour:
   headBobAmplitude: 0.1
   startClip: {fileID: 8300000, guid: 85275f81464ee6f48bde398f4190aaa4, type: 3}
   audiocontroller: {fileID: 1843402666}
+  subtitlePanel: {fileID: 960327975}
+  subtitleText: "This was once a home filled with laughter, hope, and love. Now,
+    it is but a shadow of what it was\u2014a shell haunted by memories."
 --- !u!143 &1043205122
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4717,7 +4879,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.502
+  m_Volume: 0.266
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6207,7 +6369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 0.78431374}
+  m_Color: {r: 0.15471691, g: 0.15471691, b: 0.15471691, a: 0.7607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6938,6 +7100,16 @@ PrefabInstance:
       propertyPath: ChoiceSystem
       value: 
       objectReference: {fileID: 1843402665}
+    - target: {fileID: 6905380978338640854, guid: c42645f052fd6474ca6b186cd7b02f5a, type: 3}
+      propertyPath: subtitleText
+      value: "David\u2019s favorite toy... he would run around the world pretending
+        to save the world. I couldn\u2019t save him... but I maybe can still save
+        myself."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905380978338640854, guid: c42645f052fd6474ca6b186cd7b02f5a, type: 3}
+      propertyPath: subtitlePanel
+      value: 
+      objectReference: {fileID: 960327975}
     - target: {fileID: 6905380978338640854, guid: c42645f052fd6474ca6b186cd7b02f5a, type: 3}
       propertyPath: audiocontroller
       value: 
@@ -8573,6 +8745,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1986473767}
     m_Modifications:
+    - target: {fileID: 1074720461918941450, guid: 71e4c0e10906ff446825b059c67df290, type: 3}
+      propertyPath: m_Volume
+      value: 0.72
+      objectReference: {fileID: 0}
     - target: {fileID: 4227887612452085063, guid: 71e4c0e10906ff446825b059c67df290, type: 3}
       propertyPath: Index
       value: 7
@@ -8585,6 +8761,15 @@ PrefabInstance:
       propertyPath: ChoiceSystem
       value: 
       objectReference: {fileID: 1843402665}
+    - target: {fileID: 4227887612452085063, guid: 71e4c0e10906ff446825b059c67df290, type: 3}
+      propertyPath: subtitleText
+      value: My love, the days blur together in this place. I wonder if you are still
+        there to receive these words. Or have they taken you too?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227887612452085063, guid: 71e4c0e10906ff446825b059c67df290, type: 3}
+      propertyPath: subtitlePanel
+      value: 
+      objectReference: {fileID: 960327975}
     - target: {fileID: 4227887612452085063, guid: 71e4c0e10906ff446825b059c67df290, type: 3}
       propertyPath: audiocontroller
       value: 
@@ -8688,6 +8873,15 @@ PrefabInstance:
       propertyPath: ChoiceSystem
       value: 
       objectReference: {fileID: 1843402665}
+    - target: {fileID: 3086039488756973510, guid: 5aac246c97b3a0740a758cc3e71d8619, type: 3}
+      propertyPath: subtitleText
+      value: "Anna left this behind. She said it would remind me of her warmth. Now
+        it\u2019s cold and frayed, like the memories."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3086039488756973510, guid: 5aac246c97b3a0740a758cc3e71d8619, type: 3}
+      propertyPath: subtitlePanel
+      value: 
+      objectReference: {fileID: 960327975}
     - target: {fileID: 3086039488756973510, guid: 5aac246c97b3a0740a758cc3e71d8619, type: 3}
       propertyPath: audiocontroller
       value: 

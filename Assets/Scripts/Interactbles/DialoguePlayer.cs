@@ -1,10 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class DialoguePlayer : MonoBehaviour
 {
     public AudioClip dialogueClip;
     public GameObject gameUI;
     private AudioSource audioSource;
+    
+    public GameObject subtitlePanel;
+    public string subtitleText;
+    private TextMeshProUGUI subtitle;
 
     public int Index;
     public ChoiceSystem audiocontroller;
@@ -15,6 +21,7 @@ public class DialoguePlayer : MonoBehaviour
         // audiocontroller = ChoiceSystem.GetComponent<ChoiceSystem>();
         gameUI.SetActive(true);
 
+        subtitle = subtitlePanel.GetComponent<TextMeshProUGUI>();
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
@@ -40,6 +47,9 @@ public class DialoguePlayer : MonoBehaviour
             audioSource.Play();
             Debug.Log("Playing dialogue: " + dialogueClip.name);
 
+            subtitle.text = subtitleText;
+            subtitlePanel.SetActive(true);
+
             audiocontroller.setterIsChecked(Index);
             if (playerController != null)
             {
@@ -63,6 +73,7 @@ public class DialoguePlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(audioSource.clip.length);
         audiocontroller.isAudioPlaying = false;
+        subtitlePanel.SetActive(false);
         if (playerController != null)
         {
             playerController.enabled = true;

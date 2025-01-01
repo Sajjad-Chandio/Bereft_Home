@@ -2043,6 +2043,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Credits
       objectReference: {fileID: 0}
+    - target: {fileID: 5474944838190413209, guid: 0aa928873e29d7b4ca742beb54ece788, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8234576674233832367, guid: 0aa928873e29d7b4ca742beb54ece788, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

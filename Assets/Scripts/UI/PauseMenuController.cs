@@ -4,8 +4,10 @@ using UnityEngine.SceneManagement;
 public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenuPanel;
+    public GameObject subtitlePanel;
     public AudioSource[] audioSources;
     private bool isPaused = false;
+    private bool subs = false;
 
     void Start()
     {
@@ -35,6 +37,8 @@ public class PauseMenuController : MonoBehaviour
     {
         isPaused = true;
         pauseMenuPanel.SetActive(true);
+        subs = subtitlePanel.activeSelf;
+        subtitlePanel.SetActive(false);
         Time.timeScale = 0f;
 
         foreach (AudioSource audio in audioSources)
@@ -47,6 +51,7 @@ public class PauseMenuController : MonoBehaviour
     {
         isPaused = false;
         pauseMenuPanel.SetActive(false);
+        subtitlePanel.SetActive(subs);
         Time.timeScale = 1f; 
         
         foreach (AudioSource audio in audioSources)
