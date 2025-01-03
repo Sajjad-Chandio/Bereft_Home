@@ -1,14 +1,13 @@
-<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-<foreignObject width="100" height="100">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-        <ul>
-            <li>text</li>
-        </ul>
-        <iframe frameborder="0" src="https://itch.io/embed/3215557?linkback=true&amp;bg_color=181f27&amp;fg_color=ffffff&amp;link_color=cf5040" width="552" height="167">
-          <a href="https://sajjad-chandio.itch.io/bereft-home">
-            Bereft Home by Sajjad Chandio, Sarah
-          </a>
-        </iframe>
-    </div>
-</foreignObject>
+<svg xmlns="http://www.w3.org/2000/svg" width="552" height="167">
+  <foreignObject width="100%" height="100%">
+    <body xmlns="http://www.w3.org/1999/xhtml" style="margin: 0; padding: 0;">
+      <iframe 
+        frameborder="0" 
+        src="https://itch.io/embed/3215557?linkback=true&amp;bg_color=181f27&amp;fg_color=ffffff&amp;link_color=cf5040" 
+        width="552" 
+        height="167"
+        style="border: none; width: 100%; height: 100%;">
+      </iframe>
+    </body>
+  </foreignObject>
 </svg>
