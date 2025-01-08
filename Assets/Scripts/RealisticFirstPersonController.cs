@@ -12,7 +12,7 @@ public class RealisticFirstPersonController : MonoBehaviour
     public float acceleration = 10f;
     public float gravity = -9.81f;
     public float jumpHeight = 1.5f;
-    public bool canJump = true;
+    public bool canJump = false;
 
     [Header("Look Settings")]
     public Transform cameraTransform;
@@ -109,28 +109,28 @@ public class RealisticFirstPersonController : MonoBehaviour
     void HandleMovement()
     {
         // Sprinting and Crouching
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            targetSpeed = sprintSpeed;
-        }
-        else if (Input.GetKey(KeyCode.LeftControl))
-        {
-            targetSpeed = crouchSpeed;
-            if (!isCrouching)
-            {
-                controller.height = crouchHeight;
-                isCrouching = true;
-            }
-        }
-        else
-        {
-            targetSpeed = walkSpeed;
-            if (isCrouching)
-            {
-                controller.height = originalHeight;
-                isCrouching = false;
-            }
-        }
+        // if (Input.GetKey(KeyCode.LeftShift))
+        // {
+        //     targetSpeed = sprintSpeed;
+        // }
+        // else if (Input.GetKey(KeyCode.LeftControl))
+        // {
+        //     targetSpeed = crouchSpeed;
+        //     if (!isCrouching)
+        //     {
+        //         controller.height = crouchHeight;
+        //         isCrouching = true;
+        //     }
+        // }
+        // else
+        // {
+        //     targetSpeed = walkSpeed;
+        //     if (isCrouching)
+        //     {
+        //         controller.height = originalHeight;
+        //         isCrouching = false;
+        //     }
+        // }
 
         // Smooth speed transition
         currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
@@ -139,24 +139,28 @@ public class RealisticFirstPersonController : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
+        // // Store current Y position to lock it
+        // float originalY = transform.position.y;
+
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
+        move.y = 0;
         controller.Move(move * currentSpeed * Time.deltaTime);
 
-        // Jumping and Gravity
-        if (controller.isGrounded)
-        {
-            velocity.y = -2f; // Reset velocity
-            if (canJump && Input.GetButtonDown("Jump"))
-            {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            }
-        }
-        else
-        {
-            velocity.y += gravity * Time.deltaTime;
-        }
+        // // Jumping and Gravity
+        // if (controller.isGrounded)
+        // {
+        //     velocity.y = -2f; // Reset velocity
+        //     if (canJump && Input.GetButtonDown("Jump"))
+        //     {
+        //         velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        //     }
+        // }
+        // else
+        // {
+        //     velocity.y += gravity * Time.deltaTime;
+        // }
 
-        controller.Move(velocity * Time.deltaTime);
+        // controller.Move(velocity * Time.deltaTime);
     }
 
     void HandleMouseLook()
