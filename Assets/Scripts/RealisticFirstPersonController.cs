@@ -8,7 +8,7 @@ public class RealisticFirstPersonController : MonoBehaviour
     // public float sprintSpeed = 6f;
     // public float crouchSpeed = 1.5f;
     public float acceleration = 10f;
-    // public float gravity = -9.81f;
+    public float gravity = -9.81f;
     // public float jumpHeight = 1.5f;
     // public bool canJump = false;
 
@@ -23,6 +23,7 @@ public class RealisticFirstPersonController : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 velocity;
+    private float horizontalVelocity;
     private float xRotation = 0f;
     // private bool isCrouching = false;
     private float originalHeight;
@@ -83,24 +84,26 @@ public class RealisticFirstPersonController : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
-        move.y = 0;
+        // Update horizontalVelocity
+        horizontalVelocity = new Vector3(move.x, 0, move.z).magnitude;
+
         controller.Move(move * currentSpeed * Time.deltaTime);
 
-        // // Jumping and Gravity
-        // if (controller.isGrounded)
-        // {
-        //     velocity.y = -2f; // Reset velocity
-        //     if (canJump && Input.GetButtonDown("Jump"))
-        //     {
-        //         velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        //     }
-        // }
-        // else
-        // {
-        //     velocity.y += gravity * Time.deltaTime;
-        // }
+        // Jumping and Gravity
+        if (controller.isGrounded)
+        {
+            velocity.y = -2f; // Reset velocity
+            // if (canJump && Input.GetButtonDown("Jump"))
+            // {
+            //     velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            // }
+        }
+        else
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
 
-        // controller.Move(velocity * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);
     }
 
     void HandleMouseLook()
@@ -117,7 +120,7 @@ public class RealisticFirstPersonController : MonoBehaviour
 
     void HandleHeadBob()
     {
-        if (controller.isGrounded && controller.velocity.magnitude > 0.1f)
+        if (controller.isGrounded && /*controller.velocity.magnitude*/horizontalVelocity > 0.1f)
         {
             headBobTimer += Time.deltaTime * headBobFrequency;
             cameraTransform.localPosition = cameraStartPosition +
