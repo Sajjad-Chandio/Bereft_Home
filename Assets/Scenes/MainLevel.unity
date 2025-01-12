@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.66
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.627451, g: 0.57525027, b: 0.41960785, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 2ff88bca973ea074eb1bd7938ff03ac4, type: 2}
@@ -1239,7 +1239,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 74
+  m_Intensity: 42.55
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1715,11 +1715,11 @@ Transform:
   m_GameObject: {fileID: 480704067}
   serializedVersion: 2
   m_LocalRotation: {x: 0.88190466, y: -0, z: 0.47142786, w: 0}
-  m_LocalPosition: {x: -0.717, y: 2.11, z: 7}
-  m_LocalScale: {x: 16.96807, y: 16.96807, z: 16.96807}
+  m_LocalPosition: {x: 3.928, y: 1.5831699, z: -2.6899996}
+  m_LocalScale: {x: 16.96807, y: 16.96807, z: 16.968071}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 655618498}
   m_LocalEulerAnglesHint: {x: 180, y: -56.253998, z: 0}
 --- !u!4 &497125680 stripped
 Transform:
@@ -2111,6 +2111,7 @@ Transform:
   - {fileID: 890990370}
   - {fileID: 1575336496}
   - {fileID: 410087041}
+  - {fileID: 480704071}
   - {fileID: 1986473767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7098,7 +7099,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -33.425}
+  m_AnchoredPosition: {x: 0, y: -33.42505}
   m_SizeDelta: {x: 1157.3, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2132232558
@@ -7722,4 +7723,3 @@ SceneRoots:
   - {fileID: 1317088532}
   - {fileID: 655618498}
   - {fileID: 846184307}
-  - {fileID: 480704071}
