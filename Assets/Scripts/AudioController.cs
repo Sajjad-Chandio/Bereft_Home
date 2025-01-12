@@ -14,6 +14,7 @@ public class AudioController : MonoBehaviour
 
     [Header("Start Narration")]
     public AudioSource playerAudioSource;
+    public AudioClip startClip;
     public string startSubtitle;
 
     public ChoiceSystem objective;
@@ -27,26 +28,13 @@ public class AudioController : MonoBehaviour
         subtitlePanel.SetActive(false);
         playerAudioSource.Stop();
 
-        // if (playerAudioSource.clip != null && !isAudioPlaying)
-        // {
-        //     isAudioPlaying = true;
-        //     playerAudioSource.Play();
-        //     Debug.Log("Playing dialogue: " + playerAudioSource.clip.name);
-
-        //     subtitle.text = subtitleText;
-        //     subtitlePanel.SetActive(true);
-
-        //     StartCoroutine(releaseAudioBus(playerAudioSource));
-        // }
-        // else if (isAudioPlaying || playerAudioSource.isPlaying)
-        // {
-        //     Debug.Log("Dialogue is already playing.");
-        // }
-        // else
-        // {
-        //     Debug.LogWarning("No dialogue clip assigned to this object.");
-        // }
-        PlayAudio(playerAudioSource, -1, startSubtitle);
+        if (startClip != null)
+        {
+            playerAudioSource.clip = startClip;
+            PlayAudio(playerAudioSource, -1, startSubtitle);
+        }
+        else
+            Debug.LogWarning("No dialogue clip assigned to starting narration.");
     }
     
 
@@ -64,11 +52,12 @@ public class AudioController : MonoBehaviour
             if(Index != -1)
                 objective.setterIsChecked(Index);
 
-            if (playerController != null)
-            {
-                playerController.enabled = false;
-                gameUI.SetActive(false);
-            }
+            // if (playerController != null)
+            // {
+            //     playerController.enabled = false;
+            // }
+
+            // gameUI.SetActive(false);
 
             StartCoroutine(releaseAudioBus(audioPlayer));
         }
@@ -81,6 +70,8 @@ public class AudioController : MonoBehaviour
         yield return new WaitForSeconds(audioPlayer.clip.length);
         isAudioPlaying = false;
         subtitlePanel.SetActive(false);
+        // gameUI.SetActive(true);
+        // playerController.enabled = true;
     }
 
     // Update is called once per frame

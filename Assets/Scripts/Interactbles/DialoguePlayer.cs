@@ -44,17 +44,4 @@ public class DialoguePlayer : MonoBehaviour
         else
             Debug.Log("Dialogue is already playing.");
     }
-
-    // private System.Collections.IEnumerator releaseAudioBus()
-    // {
-    //     yield return new WaitForSeconds(audioSource.clip.length);
-    //     audiocontroller.isAudioPlaying = false;
-    //     subtitlePanel.SetActive(false);
-    //     if (playerController != null)
-    //     {
-    //         playerController.enabled = true;
-    //         gameUI.SetActive(true);
-    //     }
-    // }
-
 }
