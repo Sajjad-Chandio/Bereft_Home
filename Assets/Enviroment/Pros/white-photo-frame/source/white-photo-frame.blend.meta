@@ -3,7 +3,22 @@ guid: 8bce8d20aa7bb364fbdbda784e427349
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: frame
+    second: {fileID: 2100000, guid: e2dad75a530b8814fa70239cc302f655, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: frame-darker
+    second: {fileID: 2100000, guid: 019a1a33f0a13eb40be9fe7817c2eec0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mockofun-vintage-photo-editor
+    second: {fileID: 2100000, guid: 5d5654587330c4248a419042f6609267, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
