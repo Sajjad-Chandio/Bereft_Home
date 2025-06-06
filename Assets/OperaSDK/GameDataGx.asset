@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382dad02f77a3ba42922ebfadd334fba, type: 3}
+  m_Name: GameDataGx
+  m_EditorClassIdentifier: 
+  gameData:
+    name: Bereft Home
+    editUrl: https://dev.gx.games/games/69aa7bb6-6e91-4ab6-9b61-615449e1c26e/details
+    group:
+      name: luny-cipres studio
+      studioId: 6339002a-253c-425a-b649-e6b85d4d3839
+      gameMaxSize: 2048
+    id: 69aa7bb6-6e91-4ab6-9b61-615449e1c26e
+    internalShareUrl: https://gx.games/games/cjfpyy/bereft-home/tracks/4ccbbde8-850f-4eb9-bce9-7bda30452410/
+    projectId: 
+    publicShareUrl: 
+    version:
+      major: 0
+      minor: 0
+      build: 0
+      revision: 1
+    nextVersion:
+      major: 0
+      minor: 0
+      build: 0
+      revision: 2

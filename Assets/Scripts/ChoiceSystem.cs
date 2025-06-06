@@ -14,30 +14,42 @@ public class ChoiceSystem : MonoBehaviour
     public Button journalButton;
     public Button gunButton;
     public TextMeshProUGUI objectiveText;
+    public GameObject subtitlePanel;
 
     [Header("Audio n Video")]
     public AudioClip dialogueClip;
     private AudioSource audioSource;
     public GameObject videoPanel; 
     public VideoPlayer videoPlayer;
+
     public VideoClip journalVideoClip; 
     public VideoClip gunVideoClip;   
+
+    // private string journalVideoURL;
+    // private string gunVideoURL;
 
     [Header("Player Movement")]
     public RealisticFirstPersonController playerController;
 
-    private bool isChoiceActive = false;
+    // private bool isChoiceActive = false;
 
     [Header("Variables")]
     public bool[] isChecked;
     public int countCheck;
-    public bool isAudioPlaying;
+    // public bool isAudioPlaying;
 
     private void Start()
     {
         choiceUI.SetActive(false);
         videoPanel.SetActive(false);
+        subtitlePanel.SetActive(false);
         audioSource = GetComponent<AudioSource>();
+
+        // journalVideoURL = Application.streamingAssetsPath + "/If the Player Chooses the Journal.mp4";
+        // gunVideoURL = Application.streamingAssetsPath + "/If the Player Chooses the Gun.mp4";
+
+        // journalButton.onClick.AddListener(() => PlayVideo(journalVideoURL));
+        // gunButton.onClick.AddListener(() => PlayVideo(gunVideoURL));
 
         journalButton.onClick.AddListener(() => PlayVideo(journalVideoClip));
         gunButton.onClick.AddListener(() => PlayVideo(gunVideoClip));
@@ -52,7 +64,7 @@ public class ChoiceSystem : MonoBehaviour
         UpdateObjectiveText();
     }
 
-    public void setterIsChecked(int i)
+    public void setterIsChecked(int i, AudioSource audioSource)
     {
         if (!(countCheck == isChecked.Length) && !isChecked[i])
         {
@@ -61,13 +73,15 @@ public class ChoiceSystem : MonoBehaviour
             UpdateObjectiveText(); // Update UI whenever an objective is completed
 
             if (countCheck == isChecked.Length)
-                unlockZone();
+                StartCoroutine(unlockZone(audioSource));
         }
     }
 
     // run when objective done
-    private void unlockZone()
+    private System.Collections.IEnumerator unlockZone(AudioSource audioSource)
     {
+        yield return new WaitForSeconds(audioSource.clip.length);
+
         Collider collider = GetComponent<Collider>();
         if (collider != null)
             collider.isTrigger = true; // Set the collider as a trigger
@@ -75,21 +89,25 @@ public class ChoiceSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isAudioPlaying && !isChoiceActive && other.CompareTag("Player"))
+        if (/*!isChoiceActive && */other.CompareTag("Player"))
             TriggerChoice();
     }
 
     private void TriggerChoice()
     {
-        isChoiceActive = true;
+        // isChoiceActive = true;
         choiceUI.SetActive(true);
         gameUI.SetActive(false);
 
         audioSource.clip = dialogueClip;
         audioSource.Play();
-        isAudioPlaying = true;
+        subtitlePanel.SetActive(true);
+        // isAudioPlaying = true;
         StartCoroutine(releaseAudioBus());
         Debug.Log("Playing dialogue: " + dialogueClip.name);
+
+        journalButton.interactable = false;
+        gunButton.interactable = false;
 
         if (playerController != null)
         {
@@ -106,20 +124,24 @@ public class ChoiceSystem : MonoBehaviour
     private System.Collections.IEnumerator releaseAudioBus()
     {
         yield return new WaitForSeconds(audioSource.clip.length);
-        isAudioPlaying = false;
+        // isAudioPlaying = false;
+        
+        journalButton.interactable = true;
+        gunButton.interactable = true;
+        subtitlePanel.SetActive(false);
     }
 
-    private void PlayVideo(VideoClip videoClip)
+    private void PlayVideo(/*string*/VideoClip videoClip)
     {
-        if(isAudioPlaying)
-        {
-            Debug.LogWarning("Dialogue playing");
-            return;
-        }
+        // if(isAudioPlaying)
+        // {
+        //     Debug.LogWarning("Dialogue playing");
+        //     return;
+        // }
         if (videoClip != null)
         {
             videoPanel.SetActive(true); // Show the video panel
-            videoPlayer.clip = videoClip;
+            videoPlayer.clip/*url*/ = videoClip;
             videoPlayer.Play();
         }
         else
@@ -139,19 +161,6 @@ public class ChoiceSystem : MonoBehaviour
             yield return null;
         }
         SceneManager.LoadScene("EndLevel");
-
-        // videoPanel.SetActive(false); // Hide the video panel after video finishes
-        // gameUI.SetActive(true);
-
-        // if (playerController != null)
-        // {
-        //     playerController.enabled = true;
-        //     Cursor.lockState = CursorLockMode.Locked; // Locks the cursor again for gameplay
-        //     Cursor.visible = false;                   // Hides the cursor
-        // }
-
-        // isChoiceActive = false;
-
     }
 
     private void UpdateObjectiveText()
